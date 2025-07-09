@@ -43,6 +43,7 @@ public class EmailService {
     String starttls;
 
     private JavaMailSender emailSender;
+
     public void enviarEmailConfirmacaoCadastroCliente(Cliente cliente) {
 
         String assuntoEmail = "Bem vindo ao nosso aplicativo";
@@ -94,7 +95,7 @@ public class EmailService {
         emailSender.send(message);
     }
 
-   private JavaMailSender getJavaMailSender() {
+    private JavaMailSender getJavaMailSender() {
 
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
         mailSender.setHost(host);

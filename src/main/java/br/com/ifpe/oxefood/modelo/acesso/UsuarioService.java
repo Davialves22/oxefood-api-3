@@ -19,7 +19,7 @@ public class UsuarioService implements UserDetailsService {
     @Autowired
     private UsuarioRepository repository;
 
-     @Autowired
+    @Autowired
     private JwtService jwtService;
 
     private final PasswordEncoder passwordEncoder;
@@ -33,6 +33,7 @@ public class UsuarioService implements UserDetailsService {
         this.repository = userRepository;
         this.passwordEncoder = passwordEncoder;
     }
+
     public Usuario authenticate(String username, String password) {
 
         authenticationManager.authenticate(
@@ -61,7 +62,7 @@ public class UsuarioService implements UserDetailsService {
         return repository.save(user);
     }
 
-        public Usuario obterUsuarioLogado(HttpServletRequest request) {
+    public Usuario obterUsuarioLogado(HttpServletRequest request) {
 
         Usuario usuarioLogado = null;
         String authHeader = request.getHeader("Authorization");

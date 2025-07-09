@@ -1,4 +1,5 @@
 package br.com.ifpe.oxefood.modelo.cliente;
+
 import org.hibernate.annotations.SQLRestriction;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import br.com.ifpe.oxefood.util.entity.EntidadeAuditavel;
@@ -21,30 +22,30 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class EnderecoCliente extends EntidadeAuditavel {
-     
-   @JsonIgnore
-   @ManyToOne
-   private Cliente cliente;
 
-   @Column
-   private String rua;
+    @JsonIgnore
+    @ManyToOne
+    private Cliente cliente;
 
-   @Column
-   private String numero;
+    @Column
+    private String rua;
 
-   @Column
-   private String bairro;
+    @Column
+    private String numero;
 
-   @Column
-   private String cep;
+    @Column
+    private String bairro;
 
-   @Column
-   private String cidade;
+    @Column
+    private String cep;
 
-   @Column
-   private String estado;
+    @Column
+    private String cidade;
 
-   @Column
-   private String complemento;
+    @Column
+    private String estado;
+
+    @Column
+    private String complemento;
 
 }

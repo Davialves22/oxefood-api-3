@@ -12,7 +12,7 @@ import jakarta.transaction.Transactional;
 
 @Service
 public class FuncionarioService {
-    
+
     @Autowired
     private FuncionarioRepository repository;
 
@@ -22,24 +22,22 @@ public class FuncionarioService {
     @Autowired
     private PerfilRepository perfilUsuarioRepository;
 
-
     @Transactional
     public Funcionario save(Funcionario funcionario) {
 
-
         usuarioService.save(funcionario.getUsuario());
 
-       for (Perfil perfil : funcionario.getUsuario().getRoles()) {
-           perfil.setHabilitado(Boolean.TRUE);
-           perfilUsuarioRepository.save(perfil);
-       }
+        for (Perfil perfil : funcionario.getUsuario().getRoles()) {
+            perfil.setHabilitado(Boolean.TRUE);
+            perfilUsuarioRepository.save(perfil);
+        }
 
         funcionario.setHabilitado(Boolean.TRUE);
         return repository.save(funcionario);
     }
 
     public List<Funcionario> listarTodos() {
-  
+
         return repository.findAll();
     }
 
@@ -67,7 +65,7 @@ public class FuncionarioService {
         funcionario.setEnderecoCep(funcionarioAlterado.getEnderecoCep());
         funcionario.setEnderecoUf(funcionarioAlterado.getEnderecoUf());
         funcionario.setEnderecoComplemento(funcionarioAlterado.getEnderecoComplemento());
-        
+
         repository.save(funcionario);
     }
 

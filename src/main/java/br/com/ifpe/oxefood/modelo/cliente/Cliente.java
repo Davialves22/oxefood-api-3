@@ -1,4 +1,5 @@
 package br.com.ifpe.oxefood.modelo.cliente;
+
 import java.util.List;
 import java.time.LocalDate;
 import org.hibernate.annotations.Fetch;
@@ -27,28 +28,28 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class Cliente extends EntidadeAuditavel  {
-    
-   @OneToOne
-   @JoinColumn(nullable = false)
-   private Usuario usuario;
+public class Cliente extends EntidadeAuditavel {
 
-   @OneToMany(mappedBy = "cliente", orphanRemoval = true, fetch = FetchType.EAGER)
-   @Fetch(FetchMode.SUBSELECT)
-   private List<EnderecoCliente> enderecos;
-   
-   @Column (nullable = false, length = 100)
-   private String nome;
+  @OneToOne
+  @JoinColumn(nullable = false)
+  private Usuario usuario;
 
-   @Column (nullable = false)
-   private LocalDate dataNascimento;
+  @OneToMany(mappedBy = "cliente", orphanRemoval = true, fetch = FetchType.EAGER)
+  @Fetch(FetchMode.SUBSELECT)
+  private List<EnderecoCliente> enderecos;
 
-   @Column (unique = true)
-   private String cpf;
+  @Column(nullable = false, length = 100)
+  private String nome;
 
-   @Column
-   private String foneCelular;
+  @Column(nullable = false)
+  private LocalDate dataNascimento;
 
-   @Column
-   private String foneFixo;
+  @Column(unique = true)
+  private String cpf;
+
+  @Column
+  private String foneCelular;
+
+  @Column
+  private String foneFixo;
 }
