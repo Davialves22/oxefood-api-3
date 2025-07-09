@@ -144,8 +144,8 @@ public class ClienteService {
         } else if ((nome == null || "".equals(nome)) &&
                 (cpf != null && !"".equals(cpf))) {
             listaClienteCpf = repository.consultarPorCpf(cpf);
-        } else if ((nome != null && !"".equals(nome)) && 
-                    (cpf != null && !"".equals(cpf))){
+        } else if ((nome != null && !"".equals(nome)) &&
+                (cpf != null && !"".equals(cpf))) {
             listaClienteCpf = repository.findByCpfAndNome(nome, cpf);
         }
         return listaClienteCpf;
