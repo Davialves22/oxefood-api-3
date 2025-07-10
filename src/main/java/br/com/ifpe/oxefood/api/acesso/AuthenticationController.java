@@ -14,7 +14,7 @@ import br.com.ifpe.oxefood.modelo.acesso.UsuarioService;
 import br.com.ifpe.oxefood.modelo.seguranca.JwtService;
 
 @RestController
-@RequestMapping("/api/login")
+@RequestMapping("/api/auth")
 @CrossOrigin
 public class AuthenticationController {
 
